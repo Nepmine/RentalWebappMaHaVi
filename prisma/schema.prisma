@@ -13,14 +13,21 @@ datasource db {
 
 // Tables -------------------------
 model Property {
-  id   Int    @id @default(autoincrement())
-  name String
-  // description String
-  // coordinate  String
-  // images String[]
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  price       Int
+  coordinate  Json
+  images      Json[]
+
+  owner   Owner @relation(fields: [ownerId], references: [id])
+  ownerId Int
+  // owner: id
 }
 
 model Owner {
   id   Int    @id @default(autoincrement())
   name String
+
+  property Property[]
 }
