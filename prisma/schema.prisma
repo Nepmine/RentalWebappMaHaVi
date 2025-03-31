@@ -11,9 +11,12 @@ datasource db {
 }
 
 // Tables -------------------------
-model Properties {
-  id   Int    @id @default(autoincrement())
-  name String
+model Property {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  coordinate  String
+  // images String[]
 }
 
 model Owner {

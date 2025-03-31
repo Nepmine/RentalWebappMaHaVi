@@ -14,7 +14,7 @@ const getAllProperties = asyncHandler(async (req, res) => {
 const setAllProperties = asyncHandler(async (req, res) => {
     console.log("setAllProperties called !")
     const name = 'Suraj Ghimire'
-    const callPrisma = await prisma.properties.create({
+    const callPrisma = await prisma.property.create({
         data: {
             name: "Suraj Ghimire"
         }
