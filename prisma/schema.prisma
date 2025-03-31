@@ -6,16 +6,17 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlserver"
+  // provider = "sqlserver"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 // Tables -------------------------
 model Property {
-  id          Int    @id @default(autoincrement())
-  name        String
-  description String
-  coordinate  String
+  id   Int    @id @default(autoincrement())
+  name String
+  // description String
+  // coordinate  String
   // images String[]
 }
 
