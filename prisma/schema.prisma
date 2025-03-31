@@ -1,12 +1,10 @@
 // Setup ----------------------
 generator client {
   provider = "prisma-client-js"
-  // output   = "../generated/prisma"
   output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
-  // provider = "sqlserver"
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
@@ -17,12 +15,11 @@ model Property {
   name        String
   description String
   price       Int
-  coordinate  Json
+  coordinates Json
   images      Json[]
 
   owner   Owner @relation(fields: [ownerId], references: [id])
   ownerId Int
-  // owner: id
 }
 
 model Owner {
