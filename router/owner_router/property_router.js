@@ -2,13 +2,13 @@ const express = require('express');
 const propertyRouter = express.Router();
 
 // imports ------------------
-const { getAllProperties, setOwner, setProperty } = require('../../controllers/property_controller');
+const { getAllProperties, createOwner, createProperty } = require('../../controllers/property_controller');
 
 
 propertyRouter.route('/getAllProperties').get(getAllProperties)
 
-propertyRouter.route('/setOwner').get(setOwner)
+propertyRouter.route('/createOwner').post(createOwner)
 
-propertyRouter.route('/setProperty').post(setProperty)
+propertyRouter.route('/createProperty').post(createProperty)
 
 module.exports = propertyRouter;
